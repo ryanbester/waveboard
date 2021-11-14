@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waveboard.Windows", "Waveboard.Windows\Waveboard.Windows.csproj", "{95659937-DF96-46FC-A01B-A222309CAA1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waveboard.Common", "Waveboard.Common\Waveboard.Common.csproj", "{2826D9F4-ECAE-4EF4-B253-5F9B33261D3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waveboard.Linux", "Waveboard.Linux\Waveboard.Linux.csproj", "{05375897-11B3-4193-9258-C73CA586DC0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waveboard.Resources", "Waveboard.Resources\Waveboard.Resources.csproj", "{67BD3534-0F80-4C55-877D-B40ACCE7EAE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95659937-DF96-46FC-A01B-A222309CAA1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95659937-DF96-46FC-A01B-A222309CAA1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95659937-DF96-46FC-A01B-A222309CAA1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95659937-DF96-46FC-A01B-A222309CAA1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2826D9F4-ECAE-4EF4-B253-5F9B33261D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2826D9F4-ECAE-4EF4-B253-5F9B33261D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2826D9F4-ECAE-4EF4-B253-5F9B33261D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2826D9F4-ECAE-4EF4-B253-5F9B33261D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05375897-11B3-4193-9258-C73CA586DC0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05375897-11B3-4193-9258-C73CA586DC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05375897-11B3-4193-9258-C73CA586DC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05375897-11B3-4193-9258-C73CA586DC0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67BD3534-0F80-4C55-877D-B40ACCE7EAE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67BD3534-0F80-4C55-877D-B40ACCE7EAE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67BD3534-0F80-4C55-877D-B40ACCE7EAE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67BD3534-0F80-4C55-877D-B40ACCE7EAE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
