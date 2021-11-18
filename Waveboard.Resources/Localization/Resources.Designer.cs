@@ -19,7 +19,7 @@ namespace Waveboard.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -66,6 +66,141 @@ namespace Waveboard.Resources {
         public static string AppName {
             get {
                 return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waveboard ran into a critical error and needs to close:.
+        /// </summary>
+        public static string ErrorCriticalError {
+            get {
+                return ResourceManager.GetString("ErrorCriticalError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oh no!.
+        /// </summary>
+        public static string ErrorOhNo {
+            get {
+                return ResourceManager.GetString("ErrorOhNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        public static string ErrorOk {
+            get {
+                return ResourceManager.GetString("ErrorOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string ErrorTabDetails {
+            get {
+                return ResourceManager.GetString("ErrorTabDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overview.
+        /// </summary>
+        public static string ErrorTabOverview {
+            get {
+                return ResourceManager.GetString("ErrorTabOverview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string ErrorTitle {
+            get {
+                return ResourceManager.GetString("ErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to © 2021 Ryan Bester.
+        /// </summary>
+        public static string LoadingCopyright {
+            get {
+                return ResourceManager.GetString("LoadingCopyright", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local Debug Build.
+        /// </summary>
+        public static string LoadingDebug {
+            get {
+                return ResourceManager.GetString("LoadingDebug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warming Up....
+        /// </summary>
+        public static string LoadingStatus1 {
+            get {
+                return ResourceManager.GetString("LoadingStatus1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checking for Updates....
+        /// </summary>
+        public static string LoadingStatus2 {
+            get {
+                return ResourceManager.GetString("LoadingStatus2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading Settings....
+        /// </summary>
+        public static string LoadingStatus3 {
+            get {
+                return ResourceManager.GetString("LoadingStatus3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Initialising Sound Engine....
+        /// </summary>
+        public static string LoadingStatus4 {
+            get {
+                return ResourceManager.GetString("LoadingStatus4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading Sound Packs....
+        /// </summary>
+        public static string LoadingStatus5 {
+            get {
+                return ResourceManager.GetString("LoadingStatus5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading Waveboard....
+        /// </summary>
+        public static string LoadingTitle {
+            get {
+                return ResourceManager.GetString("LoadingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version {0}.
+        /// </summary>
+        public static string LoadingVersion {
+            get {
+                return ResourceManager.GetString("LoadingVersion", resourceCulture);
             }
         }
     }

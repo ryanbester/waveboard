@@ -15,7 +15,7 @@ namespace Waveboard.UI.Extensions
             Source = source;
         }
 
-        public string Source { get; set;}
+        public string Source { get; init;}
 
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
@@ -24,7 +24,7 @@ namespace Waveboard.UI.Extensions
                 return null;
             }
 
-            var bmp = new Bitmap(Waveboard.Resources.WaveboardResources.ResourceAssembly.GetManifestResourceStream(Source));
+            var bmp = new Bitmap(Resources.WaveboardResources.ResourceAssembly.GetManifestResourceStream(Source));
 
             return Imaging.CreateBitmapSourceFromHBitmap(bmp.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty,
                 BitmapSizeOptions.FromEmptyOptions());

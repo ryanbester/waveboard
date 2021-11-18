@@ -120,5 +120,49 @@
   <data name="AppName" xml:space="preserve">
     <value>Waveboard</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ErrorCriticalError" xml:space="preserve">
+    <value>Waveboard ran into a critical error and needs to close:</value>
+  </data>
+  <data name="ErrorOhNo" xml:space="preserve">
+    <value>Oh no!</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ErrorTabOverview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="ErrorTabDetails" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="ErrorOk" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="LoadingTitle" xml:space="preserve">
+    <value>Loading Waveboard...</value>
+  </data>
+  <data name="LoadingVersion" xml:space="preserve">
+    <value>Version {0}</value>
+  </data>
+  <data name="LoadingDebug" xml:space="preserve">
+    <value>Local Debug Build</value>
+  </data>
+  <data name="LoadingCopyright" xml:space="preserve">
+    <value>© 2021 Ryan Bester</value>
+  </data>
+  <data name="LoadingStatus1" xml:space="preserve">
+    <value>Warming Up...</value>
+  </data>
+  <data name="LoadingStatus2" xml:space="preserve">
+    <value>Checking for Updates...</value>
+  </data>
+  <data name="LoadingStatus3" xml:space="preserve">
+    <value>Loading Settings...</value>
+  </data>
+  <data name="LoadingStatus4" xml:space="preserve">
+    <value>Initialising Sound Engine...</value>
+  </data>
+  <data name="LoadingStatus5" xml:space="preserve">
+    <value>Loading Sound Packs...</value>
+  </data>
 </root>
