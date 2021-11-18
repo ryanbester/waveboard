@@ -9,6 +9,7 @@ using System.Windows.Threading;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using Waveboard.Common;
+using Waveboard.Common.Data.Skin;
 
 namespace Waveboard.UI
 {
@@ -42,6 +43,19 @@ namespace Waveboard.UI
         public SplashScreen()
         {
             InitializeComponent();
+
+            var splashConfig = SplashConfigFile.LoadConfigFile("Assets/splash.json");
+            if (splashConfig != null)
+            {
+                TitleText.Foreground = new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.TitleColor, 255));
+                VersionTxt.Foreground =
+                    new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.VersionColor, 255));
+                CopyrightTxt.Foreground =
+                    new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.CopyrightColor, 255));
+                StatusTxt.Foreground = new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.StatusColor, 255));
+                ProgressBar.Foreground =
+                    new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.ProgressBarColor, 255));
+            }
 
             Image<Rgba32> img =
                 WaveboardAssets.GetBitmap("Waveboard.Resources.Assets.splash.png", "Assets/splash.png");
@@ -89,22 +103,22 @@ namespace Waveboard.UI
 #endif
 
                 // Part 2: Checking for updates
-                Dispatcher.BeginInvoke(() => { StatusText.Text = Waveboard.Resources.Resources.LoadingStatus2; },
+                Dispatcher.BeginInvoke(() => { StatusTxt.Text = Waveboard.Resources.Resources.LoadingStatus2; },
                     DispatcherPriority.Background);
                 // TODO: Connect to update server
 
                 // Part 3: Loading settings
-                Dispatcher.BeginInvoke(() => { StatusText.Text = Waveboard.Resources.Resources.LoadingStatus3; },
+                Dispatcher.BeginInvoke(() => { StatusTxt.Text = Waveboard.Resources.Resources.LoadingStatus3; },
                     DispatcherPriority.Background);
                 // TODO: Load settings
 
                 // Part 4: Initialising sound engine
-                Dispatcher.BeginInvoke(() => { StatusText.Text = Waveboard.Resources.Resources.LoadingStatus4; },
+                Dispatcher.BeginInvoke(() => { StatusTxt.Text = Waveboard.Resources.Resources.LoadingStatus4; },
                     DispatcherPriority.Background);
                 // TODO: Sound engine initialisation
 
                 // Part 5: Loading sound packs
-                Dispatcher.BeginInvoke(() => { StatusText.Text = Waveboard.Resources.Resources.LoadingStatus5; },
+                Dispatcher.BeginInvoke(() => { StatusTxt.Text = Waveboard.Resources.Resources.LoadingStatus5; },
                     DispatcherPriority.Background);
                 // TODO: Load sound packs
 

@@ -18,7 +18,7 @@
                         <Grid x:Name="Root">
                             <Border Name="PART_Track" CornerRadius="5" Background="#fefefe" BorderBrush="#666666"
                                     BorderThickness="2" />
-                            <Border Name="PART_Indicator" CornerRadius="5" Background="Blue" BorderBrush="#666666"
+                            <Border Name="PART_Indicator" CornerRadius="5" Background="{TemplateBinding Foreground}" BorderBrush="#666666"
                                     BorderThickness="2" HorizontalAlignment="Left" />
                         </Grid>
                     </ControlTemplate>
@@ -49,14 +49,14 @@
                 <DropShadowEffect Direction="315" Color="#666666" ShadowDepth="1" BlurRadius="14" />
             </Image.Effect>
         </Image>
-        <TextBlock FontSize="14" Grid.Row="0" Grid.Column="2" Margin="15" HorizontalAlignment="Right"
+        <TextBlock Name="CopyrightTxt" FontSize="14" Grid.Row="0" Grid.Column="2" Margin="15" HorizontalAlignment="Right"
                    Foreground="#fefefe" Text="{x:Static resources:Resources.LoadingCopyright}" />
         <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Margin="15" Name="TitleText"
                    Foreground="#fefefe" Text="{x:Static resources:Resources.AppName}" Grid.Row="1"
                    TextAlignment="Center" FontSize="28" VerticalAlignment="Center" />
-        <TextBlock FontSize="14" Grid.Column="0" Grid.ColumnSpan="3" Margin="15, 0, 0, 0" Name="StatusText"
+        <TextBlock FontSize="14" Grid.Column="0" Grid.ColumnSpan="3" Margin="15, 0, 0, 0" Name="StatusTxt"
                    Foreground="#fefefe" Text="{x:Static resources:Resources.LoadingStatus1}" Grid.Row="2" />
         <ProgressBar Grid.Column="0" Grid.ColumnSpan="3" Name="ProgressBar" Grid.Row="3" Margin="15, 7, 15, 15"
-                     IsIndeterminate="True" />
+                     IsIndeterminate="True" Foreground="Blue" />
     </Grid>
 </Window>
