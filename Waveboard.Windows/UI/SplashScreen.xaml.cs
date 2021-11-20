@@ -9,6 +9,7 @@ using System.Windows.Threading;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using Waveboard.Common;
+using Waveboard.Common.Data;
 using Waveboard.Common.Data.Skin;
 
 namespace Waveboard.UI
@@ -44,18 +45,17 @@ namespace Waveboard.UI
         {
             InitializeComponent();
 
-            var splashConfig = SplashConfigFile.LoadConfigFile("Assets/splash.json");
-            if (splashConfig != null)
-            {
-                TitleText.Foreground = new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.TitleColor, 255));
-                VersionTxt.Foreground =
-                    new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.VersionColor, 255));
-                CopyrightTxt.Foreground =
-                    new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.CopyrightColor, 255));
-                StatusTxt.Foreground = new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.StatusColor, 255));
-                ProgressBar.Foreground =
-                    new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.ProgressBarColor, 255));
-            }
+            var splashConfig = ConfigFile<SplashConfig>.ReadConfigFile("Assets/splash.json");
+            TitleText.Foreground = new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.TitleColor, 255));
+            VersionTxt.Foreground =
+                new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.VersionColor, 255));
+            CopyrightTxt.Foreground =
+                new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.CopyrightColor, 255));
+            StatusTxt.Foreground = new SolidColorBrush(ColorExtensions.FromInteger(splashConfig.StatusColor, 255));
+            ProgressBar.Resources["ProgressForeColor"] =
+                ColorExtensions.FromInteger(splashConfig.ProgressForeColor, 255);
+            ProgressBar.Resources["ProgressBackColor"] =
+                ColorExtensions.FromInteger(splashConfig.ProgressBackColor, 255);
 
             Image<Rgba32> img =
                 WaveboardAssets.GetBitmap("Waveboard.Resources.Assets.splash.png", "Assets/splash.png");

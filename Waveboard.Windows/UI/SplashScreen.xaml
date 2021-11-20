@@ -18,8 +18,23 @@
                         <Grid x:Name="Root">
                             <Border Name="PART_Track" CornerRadius="5" Background="#fefefe" BorderBrush="#666666"
                                     BorderThickness="2" />
-                            <Border Name="PART_Indicator" CornerRadius="5" Background="{TemplateBinding Foreground}" BorderBrush="#666666"
-                                    BorderThickness="2" HorizontalAlignment="Left" />
+                            <Border Name="PART_Indicator" CornerRadius="5"
+                                    BorderBrush="#666666"
+                                    BorderThickness="2" HorizontalAlignment="Left">
+                                <Border.Background>
+                                    <SolidColorBrush Color="{DynamicResource ProgressBackColor}" />
+                                </Border.Background>
+                            </Border>
+                            <Grid x:Name="Animation" ClipToBounds="True">
+                                <Border x:Name="PART_GlowRect"
+                                        Width="100"
+                                        HorizontalAlignment="Left"
+                                        Margin="-100,0,0,0">
+                                    <Border.Background>
+                                        <SolidColorBrush Color="{DynamicResource ProgressForeColor}" />
+                                    </Border.Background>
+                                </Border>
+                            </Grid>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
@@ -49,7 +64,8 @@
                 <DropShadowEffect Direction="315" Color="#666666" ShadowDepth="1" BlurRadius="14" />
             </Image.Effect>
         </Image>
-        <TextBlock Name="CopyrightTxt" FontSize="14" Grid.Row="0" Grid.Column="2" Margin="15" HorizontalAlignment="Right"
+        <TextBlock Name="CopyrightTxt" FontSize="14" Grid.Row="0" Grid.Column="2" Margin="15"
+                   HorizontalAlignment="Right"
                    Foreground="#fefefe" Text="{x:Static resources:Resources.LoadingCopyright}" />
         <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Margin="15" Name="TitleText"
                    Foreground="#fefefe" Text="{x:Static resources:Resources.AppName}" Grid.Row="1"
@@ -57,6 +73,11 @@
         <TextBlock FontSize="14" Grid.Column="0" Grid.ColumnSpan="3" Margin="15, 0, 0, 0" Name="StatusTxt"
                    Foreground="#fefefe" Text="{x:Static resources:Resources.LoadingStatus1}" Grid.Row="2" />
         <ProgressBar Grid.Column="0" Grid.ColumnSpan="3" Name="ProgressBar" Grid.Row="3" Margin="15, 7, 15, 15"
-                     IsIndeterminate="True" Foreground="Blue" />
+                     IsIndeterminate="True" Foreground="Blue">
+            <ProgressBar.Resources>
+                <Color x:Key="ProgressForeColor">#ffffff</Color>
+                <Color x:Key="ProgressBackColor">#000000</Color>
+            </ProgressBar.Resources>
+        </ProgressBar>
     </Grid>
 </Window>
