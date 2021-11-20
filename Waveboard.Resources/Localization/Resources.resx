@@ -165,4 +165,10 @@
   <data name="LoadingStatus5" xml:space="preserve">
     <value>Loading Sound Packs...</value>
   </data>
+  <data name="UpdateAvailableTitle" xml:space="preserve">
+    <value>Update available</value>
+  </data>
+  <data name="UpdateAvailableMessage" xml:space="preserve">
+    <value>An update is available. Would you like to update now?</value>
+  </data>
 </root>

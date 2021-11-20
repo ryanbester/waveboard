@@ -29,7 +29,7 @@ namespace Waveboard.UI
             },
             {
                 "Waveboard.Common.dll",
-                "CF38EED4D72FB62D84B88ED85804223D58BFFF47C0894FB7C463D08965D13BA1"
+                "0F66F68D0874C5D1742B17497F0D5B92AAA48E04D2D57FC2075DDF04883EECC5"
             },
             {
                 "SixLabors.ImageSharp.dll",
@@ -37,7 +37,7 @@ namespace Waveboard.UI
             },
             {
                 "Waveboard.Resources.dll",
-                "9EAD5C85907FC0EDE08D6EE052D3013E5FC16D180DC36CDA7A3E0027EFE3F54C"
+                "E2BD162A9D63717B8D71D60F8A61BFAB58F79F97D304A5E0B8DFCA266A63E5F2"
             },
         };
 
@@ -91,7 +91,7 @@ namespace Waveboard.UI
                 Dispatcher.BeginInvoke(() =>
                 {
                     VersionTxt.Text = String.Format(Waveboard.Resources.Resources.LoadingVersion,
-                        Assembly.GetExecutingAssembly().GetName().Version);
+                        Assembly.GetExecutingAssembly().GetName().Version.ToString(3));
                 }, DispatcherPriority.Background);
 
 #if !DEBUG
@@ -105,7 +105,28 @@ namespace Waveboard.UI
                 // Part 2: Checking for updates
                 Dispatcher.BeginInvoke(() => { StatusTxt.Text = Waveboard.Resources.Resources.LoadingStatus2; },
                     DispatcherPriority.Background);
-                // TODO: Connect to update server
+
+                var updateSettings = ConfigFile<UpdateSettings>.ReadConfigFile("update.json");
+                if (UpdateManager.CheckForUpdates(updateSettings) != null)
+                {
+                    MessageBoxResult updateRes = MessageBoxResult.No;
+                    Dispatcher.BeginInvoke(() =>
+                    {
+                        updateRes = MessageBox.Show(this, Waveboard.Resources.Resources.UpdateAvailableMessage,
+                            Waveboard.Resources.Resources.UpdateAvailableTitle, MessageBoxButton.YesNo,
+                            MessageBoxImage.Asterisk);
+                    }, DispatcherPriority.Background).Wait();
+                    if (updateRes == MessageBoxResult.Yes)
+                    {
+                        Dispatcher.BeginInvoke(() =>
+                        {
+                            var updateWin = new UpdateWindow();
+                            updateWin.Show();
+                            Close();
+                        }, DispatcherPriority.Background);
+                        return;
+                    }
+                }
 
                 // Part 3: Loading settings
                 Dispatcher.BeginInvoke(() => { StatusTxt.Text = Waveboard.Resources.Resources.LoadingStatus3; },

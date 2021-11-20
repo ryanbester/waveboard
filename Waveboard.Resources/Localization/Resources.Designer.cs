@@ -203,5 +203,23 @@ namespace Waveboard.Resources {
                 return ResourceManager.GetString("LoadingVersion", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An update is available. Would you like to update now?.
+        /// </summary>
+        public static string UpdateAvailableMessage {
+            get {
+                return ResourceManager.GetString("UpdateAvailableMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update available.
+        /// </summary>
+        public static string UpdateAvailableTitle {
+            get {
+                return ResourceManager.GetString("UpdateAvailableTitle", resourceCulture);
+            }
+        }
     }
 }
