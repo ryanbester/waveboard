@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
@@ -16,31 +15,6 @@ namespace Waveboard.UI
 {
     public partial class SplashScreen : Window
     {
-        // Dependency validation
-        private readonly Dictionary<String, String> _dependencies = new()
-        {
-            {
-                "Microsoft.Win32.SystemEvents.dll",
-                "2283A220F5CFE9E78BA7105FCB039178BEB79B53B3A9FD9555C5FB72576A0ACE"
-            },
-            {
-                "System.Drawing.Common.dll",
-                "07AE3C66A7131303A8C7088C755D4A52DEB6D6FF9A2A437896952960F46FB00C"
-            },
-            {
-                "Waveboard.Common.dll",
-                "0F66F68D0874C5D1742B17497F0D5B92AAA48E04D2D57FC2075DDF04883EECC5"
-            },
-            {
-                "SixLabors.ImageSharp.dll",
-                "91C9C5706BE3F7756E13BE121185F163F0FEA51E0F3C8B5A46FA7AEBAC1D26EC"
-            },
-            {
-                "Waveboard.Resources.dll",
-                "E2BD162A9D63717B8D71D60F8A61BFAB58F79F97D304A5E0B8DFCA266A63E5F2"
-            },
-        };
-
         public SplashScreen()
         {
             InitializeComponent();
@@ -156,7 +130,8 @@ namespace Waveboard.UI
         {
             try
             {
-                DependencyValidation.ValidateDependencies(_dependencies);
+                var dependencies = DependencyValidation.GetChecksums();
+                DependencyValidation.ValidateDependencies(dependencies);
             }
             catch (Exception ex)
             {
